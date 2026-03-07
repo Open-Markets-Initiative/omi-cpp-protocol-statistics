@@ -1,23 +1,48 @@
 # Omi C++ Protocol Statistics
 
+[![Omi](https://github.com/Open-Markets-Initiative/Directory/blob/main/About/Images/Logo.png)](https://github.com/Open-Markets-Initiative/Directory)
+
 Omi C++ protocol statistics provide generated pcap-based binary protocol validation tools for common exchange protocols.
 
+Each protocol generates a standalone C++ project that reads pcap files and reports message statistics.
+
+## Protocols
+
+| Organization | Protocol |
+| --- | --- |
+| Investors Exchange | Investors Exchange Transport Protocol 1.0.1 |
+| National Association of Securities Dealers Automated Quotations | Itch 5.0 |
+
+## Build
+
+Requirements: C++23, CMake 3.28+
+
+```bash
+mkdir build && cd build
+cmake ..
+make
+```
 
 ## Usage
 
-Each protocol generates a standalone C++ project with CMake build support that reads pcap files and reports message statistics.
+```bash
+./<target> --input <pcap file>
+```
 
+Run with `--help` for all options.
 
 ## Development
 
-Updates are greatly appreciated; however, this entire repository is source generated. If you wish to suggest updates, the recommended process is to create an issue with changes and explanation.
-
-| Protocol Count |
-| --- |
-| 2 |
-
+This entire repository is source generated. If you wish to suggest updates, the recommended process is to create an issue with changes and explanation. Time permitting, we will update the models and regenerate.
 
 ## Open Markets Initiative
 
-[Open Markets Initiative](https://openmarkets.online/ "Open Markets Initiative")
+The [Open Markets Initiative (Omi)](https://github.com/Open-Markets-Initiative/Directory) is a group of technologists dedicated to enhancing the stability of electronic financial markets using modern development methods.
 
+For a list of Omi projects: [Omi Directory](https://github.com/Open-Markets-Initiative/Directory/tree/main/Projects)
+
+## Disclaimer
+
+Any similarities between existing people, places and/or protocols is purely incidental.
+
+Enjoy.

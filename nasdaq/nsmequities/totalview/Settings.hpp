@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -5,8 +7,8 @@
 #include "packet/Parser.hpp"
 #include "statistics/Statistics.hpp"
 
-// program options
-struct Options {
+// program settings
+struct Settings {
     packet::Options pcap;
     statistics::Options statistics;
 };
@@ -19,23 +21,23 @@ void print_usage(const char* program) {
     std::cout << "  -h, --help           Show this help" << std::endl;
 }
 
-Options args(const int argc, char** argv) {
+Settings args(const int argc, char** argv) {
 
-    Options options;
+    Settings settings;
 
     for (int i = 1; i < argc; ++i) {
         std::string arg = argv[i];
 
         if (arg == "--input" || arg == "-i") {
             if (i + 1 < argc) {
-                options.pcap.file = argv[++i];
+                settings.pcap.file = argv[++i];
             } else {
                 std::cerr << "Error: --input requires a file path" << std::endl;
                 exit(1);
             }
         }
         else if (arg == "--verbose" || arg == "-v") {
-            options.statistics.verbose = true;
+            settings.statistics.verbose = true;
         }
         else if (arg == "--help" || arg == "-h") {
             print_usage(argv[0]);
@@ -48,40 +50,11 @@ Options args(const int argc, char** argv) {
         }
     }
 
-    if (options.pcap.file.empty()) {
+    if (settings.pcap.file.empty()) {
         std::cerr << "Error: --input is required" << std::endl;
         print_usage(argv[0]);
         exit(1);
     }
 
-    return options;
-}
-
-int main(const int argc, char** argv) {
-    try {
-        const auto options = args(argc, argv);
-
-        packet::Parser parser{ options.pcap };
-        statistics::Statistics statistics{ options.statistics, parser };
-
-        while (parser.next()) {
-            ++statistics.total_packets;
-            if (parser.identify() == packet::result::iex_equities_deepplus_iextp_v1_0_1) {
-                statistics.udp();
-            } else {
-                ++statistics.unknown_packets;
-            }
-        }
-
-        statistics.report();
-        return 0;
-    }
-    catch (const std::exception &exception) {
-        std::cerr << "Error: " << exception.what() << std::endl;
-        return 1;
-    }
-    catch (...) {
-        std::cerr << "Unknown exception" << std::endl;
-        return 1;
-    }
+    return settings;
 }

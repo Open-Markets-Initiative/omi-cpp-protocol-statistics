@@ -1,0 +1,31 @@
+#pragma once
+
+#include "../types/RelatedSecurityId.hpp"
+#include "../types/RelatedSymbol.hpp"
+#include "../types/RelatedInstrumentGuid.hpp"
+
+namespace cme::mdp3::v13 {
+
+namespace sbe = cme::mdp3::v13;
+
+#pragma pack(push, 1)
+
+struct RepoRelatedInstrumentsGroup {
+
+    sbe::RelatedSecurityId RelatedSecurityId;
+    sbe::RelatedSymbol RelatedSymbol;
+    sbe::RelatedInstrumentGuid RelatedInstrumentGuid;
+
+    // parse method
+    static RepoRelatedInstrumentsGroup* parse(std::byte* buffer) {
+        return reinterpret_cast<RepoRelatedInstrumentsGroup*>(buffer);
+    }
+
+    // parse method const
+    static const RepoRelatedInstrumentsGroup* parse(const std::byte* buffer) {
+        return reinterpret_cast<const RepoRelatedInstrumentsGroup*>(buffer);
+    }
+};
+
+#pragma pack(pop)
+}

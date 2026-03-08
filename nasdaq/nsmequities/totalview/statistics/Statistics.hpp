@@ -7,7 +7,6 @@
 #include "Settings.hpp"
 #include "../packet/Parser.hpp"
 #include "../protocol/iterators/MessageIterator.hpp"
-#include "../protocol/iterators/MessageBlockIterator.hpp"
 
 namespace statistics {
 
@@ -15,7 +14,6 @@ namespace statistics {
 struct Statistics {
 
     nasdaq::nsmequities::totalview::itch::v5_0::MessageIterator message;
-    nasdaq::nsmequities::totalview::itch::v5_0::MessageBlockIterator message_block;
     packet::Parser& parser;
     const statistics::Options& options;
 
@@ -57,20 +55,20 @@ struct Statistics {
     // process udp packet
     void udp() {
         const auto& frame = parser.frame();
-        message_block.initialize(frame.payload, frame.payload_len);
+        message.initialize(frame.payload, frame.payload_len);
 
-        if (message_block.message_count == 0) {
+        if (message.message_count == 0) {
             ++heartbeats;
             return;
         }
 
-        if (message_block.message_count == 65535) {
+        if (message.message_count == 65535) {
             ++heartbeats;
             return;
         }
 
-        while (message_block.next()) {
-            process(message_block.message, message_block.message_type);
+        while (message.next()) {
+            process(message.message, message.message_type);
         }
     }
 

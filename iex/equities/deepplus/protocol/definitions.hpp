@@ -17,3 +17,5 @@
 #include "messages/TradeMessage.hpp"
 #include "messages/TradeBreakMessage.hpp"
 #include "messages/ClearBookMessage.hpp"
+
+#include "iterators/MessageIterator.hpp"

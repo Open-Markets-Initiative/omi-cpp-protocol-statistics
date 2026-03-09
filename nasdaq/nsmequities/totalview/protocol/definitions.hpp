@@ -26,3 +26,5 @@
 #include "messages/NetOrderImbalanceIndicatorMessage.hpp"
 #include "messages/RetailPriceImprovementIndicatorMessage.hpp"
 #include "messages/DirectListingWithCapitalRaisePriceDiscoveryMessage.hpp"
+
+#include "iterators/MessageIterator.hpp"

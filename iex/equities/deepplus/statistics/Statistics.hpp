@@ -6,7 +6,7 @@
 
 #include "Settings.hpp"
 #include "../packet/Parser.hpp"
-#include "../protocol/iterators/MessageIterator.hpp"
+#include "../protocol/definitions.hpp"
 
 namespace statistics {
 

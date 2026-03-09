@@ -6,7 +6,7 @@
 
 #include "Settings.hpp"
 #include "../packet/Parser.hpp"
-#include "../protocol/iterators/MessageIterator.hpp"
+#include "../protocol/definitions.hpp"
 
 namespace statistics {
 
@@ -26,7 +26,6 @@ struct Statistics {
 
     // message counters
     uint64_t channel_reset = 0;
-    uint64_t admin_heartbeat = 0;
     uint64_t admin_login = 0;
     uint64_t admin_logout = 0;
     uint64_t security_status = 0;
@@ -65,6 +64,11 @@ struct Statistics {
         const auto& frame = parser.frame();
         message.initialize(frame.payload, frame.payload_len);
 
+        if (message.template_id == 12) {
+            ++heartbeats;
+            return;
+        }
+
         while (message.next()) {
             process(message.message, message.template_id);
         }
@@ -77,9 +81,6 @@ struct Statistics {
         switch (template_id) {
             case 4:
                 ++channel_reset;
-                break;
-            case 12:
-                ++admin_heartbeat;
                 break;
             case 15:
                 ++admin_login;
@@ -193,7 +194,6 @@ struct Statistics {
         std::cout << "Message Counts:" << std::endl;
         std::cout << "--------------" << std::endl;
         std::cout << "  ChannelReset (4)                                   " << channel_reset << std::endl;
-        std::cout << "  AdminHeartbeat (12)                                " << admin_heartbeat << std::endl;
         std::cout << "  AdminLogin (15)                                    " << admin_login << std::endl;
         std::cout << "  AdminLogout (16)                                   " << admin_logout << std::endl;
         std::cout << "  SecurityStatus (30)                                " << security_status << std::endl;

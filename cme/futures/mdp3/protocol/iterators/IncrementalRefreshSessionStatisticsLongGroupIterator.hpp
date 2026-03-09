@@ -23,8 +23,8 @@ struct IncrementalRefreshSessionStatisticsLongGroupIterator {
         group_size = GroupSize::parse(current);
         current += sizeof(GroupSize);
 
-        block_length = group_size->block_length.get();
-        num_in_group = group_size->num_in_group.get();
+        block_length = group_size->BlockLength.get();
+        num_in_group = group_size->NumInGroup.get();
         entry_index = 0;
         entry = nullptr;
     }

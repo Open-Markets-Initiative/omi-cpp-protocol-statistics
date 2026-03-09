@@ -23,8 +23,8 @@ struct IncrementalRefreshTradeSummaryLongOrderIdGroupIterator {
         group_size_8_byte = GroupSize8Byte::parse(current);
         current += sizeof(GroupSize8Byte);
 
-        block_length = group_size_8_byte->block_length.get();
-        num_in_group = group_size_8_byte->num_in_group.get();
+        block_length = group_size_8_byte->BlockLength.get();
+        num_in_group = group_size_8_byte->NumInGroup.get();
         entry_index = 0;
         entry = nullptr;
     }

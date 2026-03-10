@@ -11,20 +11,18 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct IncrementalRefreshSessionStatisticsGroup {
 
-    sbe::MdEntryPxEx MdEntryPxEx;
-    sbe::SecurityId SecurityId;
-    sbe::RptSeq RptSeq;
-    sbe::OpenCloseSettlFlag OpenCloseSettlFlag;
-    sbe::MdUpdateAction MdUpdateAction;
-    sbe::MdEntryTypeStatistics MdEntryTypeStatistics;
-    sbe::MdEntrySizeShortOptional MdEntrySizeShortOptional;
-    sbe::Padding1 Padding1;
+    MdEntryPxEx md_entry_px_ex;
+    SecurityId security_id;
+    RptSeq rpt_seq;
+    OpenCloseSettlFlag open_close_settl_flag;
+    MdUpdateAction md_update_action;
+    MdEntryTypeStatistics md_entry_type_statistics;
+    MdEntrySizeShortOptional md_entry_size_short_optional;
+    Padding1 padding_1;
 
     // parse method
     static IncrementalRefreshSessionStatisticsGroup* parse(std::byte* buffer) {

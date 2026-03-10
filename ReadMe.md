@@ -10,6 +10,7 @@ Each protocol generates a standalone C++ project that reads pcap files and repor
 
 | Organization | Protocol |
 | --- | --- |
+| Securities Industry Automation Corporation | Opra Binary Interface 6.1 |
 | Investors Exchange | Investors Exchange Transport Protocol 1.0.1 |
 | National Association of Securities Dealers Automated Quotations | Itch 5.0 |
 | Chicago Mercantile Exchange | Simple Binary Encoding 1.13 |

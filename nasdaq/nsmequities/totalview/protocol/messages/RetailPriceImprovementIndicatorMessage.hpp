@@ -8,18 +8,16 @@
 
 namespace nasdaq::nsmequities::totalview::itch::v5_0 {
 
-namespace itch = nasdaq::nsmequities::totalview::itch::v5_0;
-
 #pragma pack(push, 1)
 
 // Identifies a retail interest indication of the Bid, Ask or both the Bid and Ask for NASDAQ-listed securities.
 struct RetailPriceImprovementIndicatorMessage {
 
-    itch::StockLocate StockLocate;
-    itch::TrackingNumber TrackingNumber;
-    itch::Timestamp Timestamp;
-    itch::Stock Stock;
-    itch::InterestFlag InterestFlag;
+    StockLocate stock_locate;
+    TrackingNumber tracking_number;
+    Timestamp timestamp;
+    Stock stock;
+    InterestFlag interest_flag;
 
     // parse method
     static RetailPriceImprovementIndicatorMessage* parse(std::byte* buffer) {

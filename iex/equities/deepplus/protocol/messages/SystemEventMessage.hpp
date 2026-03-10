@@ -5,15 +5,13 @@
 
 namespace iex::equities::deepplus::iextp::v1_0_1 {
 
-namespace iextp = iex::equities::deepplus::iextp::v1_0_1;
-
 #pragma pack(push, 1)
 
 // The System Event Message is used to indicate events that apply to the market or the data feed.
 struct SystemEventMessage {
 
-    iextp::SystemEvent SystemEvent;
-    iextp::Timestamp Timestamp;
+    SystemEvent system_event;
+    Timestamp timestamp;
 
     // parse method
     static SystemEventMessage* parse(std::byte* buffer) {

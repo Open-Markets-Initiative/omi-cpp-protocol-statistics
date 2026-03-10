@@ -9,19 +9,17 @@
 
 namespace nasdaq::nsmequities::totalview::itch::v5_0 {
 
-namespace itch = nasdaq::nsmequities::totalview::itch::v5_0;
-
 #pragma pack(push, 1)
 
 // An Operational Halt means that there has been an interruption of service on the identified security impacting only the designated Market Center
 struct OperationalHaltMessage {
 
-    itch::StockLocate StockLocate;
-    itch::TrackingNumber TrackingNumber;
-    itch::Timestamp Timestamp;
-    itch::Stock Stock;
-    itch::MarketCode MarketCode;
-    itch::OperationalHaltAction OperationalHaltAction;
+    StockLocate stock_locate;
+    TrackingNumber tracking_number;
+    Timestamp timestamp;
+    Stock stock;
+    MarketCode market_code;
+    OperationalHaltAction operational_halt_action;
 
     // parse method
     static OperationalHaltMessage* parse(std::byte* buffer) {

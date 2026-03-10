@@ -5,14 +5,12 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct BinaryPacketHeader {
 
-    sbe::PacketSequenceNumber PacketSequenceNumber;
-    sbe::SendingTime SendingTime;
+    PacketSequenceNumber packet_sequence_number;
+    SendingTime sending_time;
 
     // parse method
     static BinaryPacketHeader* parse(std::byte* buffer) {

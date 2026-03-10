@@ -9,19 +9,17 @@
 
 namespace iex::equities::deepplus::iextp::v1_0_1 {
 
-namespace iextp = iex::equities::deepplus::iextp::v1_0_1;
-
 #pragma pack(push, 1)
 
 // A non-displayed order on the book that executed against another non-displayed order on the book
 struct TradeMessage {
 
-    iextp::SaleConditionFlags SaleConditionFlags;
-    iextp::Timestamp Timestamp;
-    iextp::Symbol Symbol;
-    iextp::Size Size;
-    iextp::Price Price;
-    iextp::TradeId TradeId;
+    SaleConditionFlags sale_condition_flags;
+    Timestamp timestamp;
+    Symbol symbol;
+    Size size;
+    Price price;
+    TradeId trade_id;
 
     // parse method
     static TradeMessage* parse(std::byte* buffer) {

@@ -5,14 +5,12 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct GroupSize {
 
-    sbe::BlockLength BlockLength;
-    sbe::NumInGroup NumInGroup;
+    BlockLength block_length;
+    NumInGroup num_in_group;
 
     // parse method
     static GroupSize* parse(std::byte* buffer) {

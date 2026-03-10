@@ -7,16 +7,14 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct TradingSessionsGroup {
 
-    sbe::TradeDate TradeDate;
-    sbe::SettlDate SettlDate;
-    sbe::MaturityDate MaturityDate;
-    sbe::SecurityAltId SecurityAltId;
+    TradeDate trade_date;
+    SettlDate settl_date;
+    MaturityDate maturity_date;
+    SecurityAltId security_alt_id;
 
     // parse method
     static TradingSessionsGroup* parse(std::byte* buffer) {

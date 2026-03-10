@@ -7,17 +7,15 @@
 
 namespace iex::equities::deepplus::iextp::v1_0_1 {
 
-namespace iextp = iex::equities::deepplus::iextp::v1_0_1;
-
 #pragma pack(push, 1)
 
 // The Trading Status Message is used to indicate the current trading status of a security.
 struct TradingStatusMessage {
 
-    iextp::TradingStatus TradingStatus;
-    iextp::Timestamp Timestamp;
-    iextp::Symbol Symbol;
-    iextp::Reason Reason;
+    TradingStatus trading_status;
+    Timestamp timestamp;
+    Symbol symbol;
+    Reason reason;
 
     // parse method
     static TradingStatusMessage* parse(std::byte* buffer) {

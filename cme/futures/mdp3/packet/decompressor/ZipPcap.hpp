@@ -2,10 +2,10 @@
 
 #ifdef HAS_ZLIB
 
-#include "PcapSource.hpp"
-#include "PcapFile.hpp"
-#include "decompressor/Detect.hpp"
-#include "decompressor/ZipDecompressor.hpp"
+#include "../PcapSource.hpp"
+#include "../PcapFile.hpp"
+#include "Detect.hpp"
+#include "ZipDecompressor.hpp"
 
 #include <cstdio>
 #include <memory>

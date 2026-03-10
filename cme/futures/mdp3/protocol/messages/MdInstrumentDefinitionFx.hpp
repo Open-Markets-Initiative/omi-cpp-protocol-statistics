@@ -50,60 +50,58 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 // MDInstrumentDefinitionFX
 struct MdInstrumentDefinitionFx {
 
-    sbe::MatchEventIndicator MatchEventIndicator;
-    sbe::TotNumReportsOptional TotNumReportsOptional;
-    sbe::SecurityUpdateAction SecurityUpdateAction;
-    sbe::LastUpdateTime LastUpdateTime;
-    sbe::MdSecurityTradingStatus MdSecurityTradingStatus;
-    sbe::ApplId ApplId;
-    sbe::MarketSegmentId MarketSegmentId;
-    sbe::UnderlyingProduct UnderlyingProduct;
-    sbe::SecurityExchange SecurityExchange;
-    sbe::SecurityGroup SecurityGroup;
-    sbe::Asset Asset;
-    sbe::Symbol Symbol;
-    sbe::SecurityId SecurityId;
-    sbe::SecurityType SecurityType;
-    sbe::CfiCode CfiCode;
-    sbe::Currency Currency;
-    sbe::SettlCurrency SettlCurrency;
-    sbe::PriceQuoteCurrency PriceQuoteCurrency;
-    sbe::MatchAlgorithm MatchAlgorithm;
-    sbe::MinTradeVol MinTradeVol;
-    sbe::MaxTradeVol MaxTradeVol;
-    sbe::MinPriceIncrement MinPriceIncrement;
-    sbe::DisplayFactor DisplayFactor;
-    sbe::PricePrecision PricePrecision;
-    sbe::UnitOfMeasure UnitOfMeasure;
-    sbe::UnitOfMeasureQty UnitOfMeasureQty;
-    sbe::HighLimitPrice HighLimitPrice;
-    sbe::LowLimitPrice LowLimitPrice;
-    sbe::MaxPriceVariation MaxPriceVariation;
-    sbe::UserDefinedInstrument UserDefinedInstrument;
-    sbe::FinancialInstrumentFullName FinancialInstrumentFullName;
-    sbe::FxCurrencySymbol FxCurrencySymbol;
-    sbe::SettlType SettlType;
-    sbe::InterveningDays InterveningDays;
-    sbe::FxBenchmarkRateFix FxBenchmarkRateFix;
-    sbe::RateSource RateSource;
-    sbe::FixRateLocalTime FixRateLocalTime;
-    sbe::FixRateLocalTimeZone FixRateLocalTimeZone;
-    sbe::MinQuoteLife MinQuoteLife;
-    sbe::MaxPriceDiscretionOffset MaxPriceDiscretionOffset;
-    sbe::InstrumentGuid InstrumentGuid;
-    sbe::MaturityMonthYear MaturityMonthYear;
-    sbe::SettlementLocale SettlementLocale;
-    sbe::AltMinPriceIncrement AltMinPriceIncrement;
-    sbe::AltMinQuoteLife AltMinQuoteLife;
-    sbe::AltPriceIncrementConstraint AltPriceIncrementConstraint;
-    sbe::MaxBidAskConstraint MaxBidAskConstraint;
+    MatchEventIndicator match_event_indicator;
+    TotNumReportsOptional tot_num_reports_optional;
+    SecurityUpdateAction security_update_action;
+    LastUpdateTime last_update_time;
+    MdSecurityTradingStatus md_security_trading_status;
+    ApplId appl_id;
+    MarketSegmentId market_segment_id;
+    UnderlyingProduct underlying_product;
+    SecurityExchange security_exchange;
+    SecurityGroup security_group;
+    Asset asset;
+    Symbol symbol;
+    SecurityId security_id;
+    SecurityType security_type;
+    CfiCode cfi_code;
+    Currency currency;
+    SettlCurrency settl_currency;
+    PriceQuoteCurrency price_quote_currency;
+    MatchAlgorithm match_algorithm;
+    MinTradeVol min_trade_vol;
+    MaxTradeVol max_trade_vol;
+    MinPriceIncrement min_price_increment;
+    DisplayFactor display_factor;
+    PricePrecision price_precision;
+    UnitOfMeasure unit_of_measure;
+    UnitOfMeasureQty unit_of_measure_qty;
+    HighLimitPrice high_limit_price;
+    LowLimitPrice low_limit_price;
+    MaxPriceVariation max_price_variation;
+    UserDefinedInstrument user_defined_instrument;
+    FinancialInstrumentFullName financial_instrument_full_name;
+    FxCurrencySymbol fx_currency_symbol;
+    SettlType settl_type;
+    InterveningDays intervening_days;
+    FxBenchmarkRateFix fx_benchmark_rate_fix;
+    RateSource rate_source;
+    FixRateLocalTime fix_rate_local_time;
+    FixRateLocalTimeZone fix_rate_local_time_zone;
+    MinQuoteLife min_quote_life;
+    MaxPriceDiscretionOffset max_price_discretion_offset;
+    InstrumentGuid instrument_guid;
+    MaturityMonthYear maturity_month_year;
+    SettlementLocale settlement_locale;
+    AltMinPriceIncrement alt_min_price_increment;
+    AltMinQuoteLife alt_min_quote_life;
+    AltPriceIncrementConstraint alt_price_increment_constraint;
+    MaxBidAskConstraint max_bid_ask_constraint;
 
     // parse method
     static MdInstrumentDefinitionFx* parse(std::byte* buffer) {

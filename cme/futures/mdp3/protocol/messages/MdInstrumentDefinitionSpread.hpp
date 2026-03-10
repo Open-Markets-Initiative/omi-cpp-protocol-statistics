@@ -46,56 +46,54 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 // MDInstrumentDefinitionSpread
 struct MdInstrumentDefinitionSpread {
 
-    sbe::MatchEventIndicator MatchEventIndicator;
-    sbe::TotNumReportsOptional TotNumReportsOptional;
-    sbe::SecurityUpdateAction SecurityUpdateAction;
-    sbe::LastUpdateTime LastUpdateTime;
-    sbe::MdSecurityTradingStatus MdSecurityTradingStatus;
-    sbe::ApplId ApplId;
-    sbe::MarketSegmentId MarketSegmentId;
-    sbe::UnderlyingProductOptional UnderlyingProductOptional;
-    sbe::SecurityExchange SecurityExchange;
-    sbe::SecurityGroup SecurityGroup;
-    sbe::Asset Asset;
-    sbe::Symbol Symbol;
-    sbe::SecurityId SecurityId;
-    sbe::SecurityType SecurityType;
-    sbe::CfiCode CfiCode;
-    sbe::MaturityMonthYear MaturityMonthYear;
-    sbe::Currency Currency;
-    sbe::SecuritySubType SecuritySubType;
-    sbe::UserDefinedInstrument UserDefinedInstrument;
-    sbe::MatchAlgorithm MatchAlgorithm;
-    sbe::MinTradeVol MinTradeVol;
-    sbe::MaxTradeVol MaxTradeVol;
-    sbe::MinPriceIncrementOptional MinPriceIncrementOptional;
-    sbe::DisplayFactor DisplayFactor;
-    sbe::PriceDisplayFormat PriceDisplayFormat;
-    sbe::PriceRatio PriceRatio;
-    sbe::TickRule TickRule;
-    sbe::UnitOfMeasure UnitOfMeasure;
-    sbe::TradingReferencePrice TradingReferencePrice;
-    sbe::SettlPriceType SettlPriceType;
-    sbe::OpenInterestQty OpenInterestQty;
-    sbe::ClearedVolume ClearedVolume;
-    sbe::HighLimitPrice HighLimitPrice;
-    sbe::LowLimitPrice LowLimitPrice;
-    sbe::MaxPriceVariation MaxPriceVariation;
-    sbe::MainFraction MainFraction;
-    sbe::SubFraction SubFraction;
-    sbe::TradingReferenceDate TradingReferenceDate;
-    sbe::PriceQuoteMethod PriceQuoteMethod;
-    sbe::RiskSet RiskSet;
-    sbe::MarketSet MarketSet;
-    sbe::InstrumentGuid InstrumentGuid;
-    sbe::FinancialInstrumentFullName FinancialInstrumentFullName;
+    MatchEventIndicator match_event_indicator;
+    TotNumReportsOptional tot_num_reports_optional;
+    SecurityUpdateAction security_update_action;
+    LastUpdateTime last_update_time;
+    MdSecurityTradingStatus md_security_trading_status;
+    ApplId appl_id;
+    MarketSegmentId market_segment_id;
+    UnderlyingProductOptional underlying_product_optional;
+    SecurityExchange security_exchange;
+    SecurityGroup security_group;
+    Asset asset;
+    Symbol symbol;
+    SecurityId security_id;
+    SecurityType security_type;
+    CfiCode cfi_code;
+    MaturityMonthYear maturity_month_year;
+    Currency currency;
+    SecuritySubType security_sub_type;
+    UserDefinedInstrument user_defined_instrument;
+    MatchAlgorithm match_algorithm;
+    MinTradeVol min_trade_vol;
+    MaxTradeVol max_trade_vol;
+    MinPriceIncrementOptional min_price_increment_optional;
+    DisplayFactor display_factor;
+    PriceDisplayFormat price_display_format;
+    PriceRatio price_ratio;
+    TickRule tick_rule;
+    UnitOfMeasure unit_of_measure;
+    TradingReferencePrice trading_reference_price;
+    SettlPriceType settl_price_type;
+    OpenInterestQty open_interest_qty;
+    ClearedVolume cleared_volume;
+    HighLimitPrice high_limit_price;
+    LowLimitPrice low_limit_price;
+    MaxPriceVariation max_price_variation;
+    MainFraction main_fraction;
+    SubFraction sub_fraction;
+    TradingReferenceDate trading_reference_date;
+    PriceQuoteMethod price_quote_method;
+    RiskSet risk_set;
+    MarketSet market_set;
+    InstrumentGuid instrument_guid;
+    FinancialInstrumentFullName financial_instrument_full_name;
 
     // parse method
     static MdInstrumentDefinitionSpread* parse(std::byte* buffer) {

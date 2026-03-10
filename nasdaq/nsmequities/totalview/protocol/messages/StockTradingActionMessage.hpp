@@ -10,20 +10,18 @@
 
 namespace nasdaq::nsmequities::totalview::itch::v5_0 {
 
-namespace itch = nasdaq::nsmequities::totalview::itch::v5_0;
-
 #pragma pack(push, 1)
 
 // Nasdaq uses this administrative message to indicate the current trading status of a security to the trading community
 struct StockTradingActionMessage {
 
-    itch::StockLocate StockLocate;
-    itch::TrackingNumber TrackingNumber;
-    itch::Timestamp Timestamp;
-    itch::Stock Stock;
-    itch::TradingState TradingState;
-    itch::Reserved Reserved;
-    itch::ReasonCode ReasonCode;
+    StockLocate stock_locate;
+    TrackingNumber tracking_number;
+    Timestamp timestamp;
+    Stock stock;
+    TradingState trading_state;
+    Reserved reserved;
+    ReasonCode reason_code;
 
     // parse method
     static StockTradingActionMessage* parse(std::byte* buffer) {

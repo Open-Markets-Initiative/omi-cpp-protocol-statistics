@@ -6,16 +6,14 @@
 
 namespace iex::equities::deepplus::iextp::v1_0_1 {
 
-namespace iextp = iex::equities::deepplus::iextp::v1_0_1;
-
 #pragma pack(push, 1)
 
 // The Security Event Message is used to indicate events that apply to a security
 struct SecurityEventMessage {
 
-    iextp::SecurityEvent SecurityEvent;
-    iextp::Timestamp Timestamp;
-    iextp::Symbol Symbol;
+    SecurityEvent security_event;
+    Timestamp timestamp;
+    Symbol symbol;
 
     // parse method
     static SecurityEventMessage* parse(std::byte* buffer) {

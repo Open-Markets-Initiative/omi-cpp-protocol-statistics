@@ -7,17 +7,15 @@
 
 namespace nasdaq::nsmequities::totalview::itch::v5_0 {
 
-namespace itch = nasdaq::nsmequities::totalview::itch::v5_0;
-
 #pragma pack(push, 1)
 
 // The system event message type is used to signal a market or data feed handler event
 struct SystemEventMessage {
 
-    itch::StockLocate StockLocate;
-    itch::TrackingNumber TrackingNumber;
-    itch::Timestamp Timestamp;
-    itch::EventCode EventCode;
+    StockLocate stock_locate;
+    TrackingNumber tracking_number;
+    Timestamp timestamp;
+    EventCode event_code;
 
     // parse method
     static SystemEventMessage* parse(std::byte* buffer) {

@@ -6,15 +6,13 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct SecurityStatusWorkupGroup {
 
-    sbe::OrderId OrderId;
-    sbe::Side Side;
-    sbe::AggressorIndicator AggressorIndicator;
+    OrderId order_id;
+    Side side;
+    AggressorIndicator aggressor_indicator;
 
     // parse method
     static SecurityStatusWorkupGroup* parse(std::byte* buffer) {

@@ -4,14 +4,12 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 // AdminLogin
 struct AdminLogin {
 
-    sbe::HeartBtInt HeartBtInt;
+    HeartBtInt heart_bt_int;
 
     // parse method
     static AdminLogin* parse(std::byte* buffer) {

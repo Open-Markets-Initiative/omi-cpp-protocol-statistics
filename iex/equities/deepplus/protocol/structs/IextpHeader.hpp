@@ -13,22 +13,20 @@
 
 namespace iex::equities::deepplus::iextp::v1_0_1 {
 
-namespace iextp = iex::equities::deepplus::iextp::v1_0_1;
-
 #pragma pack(push, 1)
 
 struct IextpHeader {
 
-    iextp::Version Version;
-    iextp::Reserved Reserved;
-    iextp::MessageProtocolId MessageProtocolId;
-    iextp::ChannelId ChannelId;
-    iextp::SessionId SessionId;
-    iextp::PayloadLength PayloadLength;
-    iextp::MessageCount MessageCount;
-    iextp::StreamOffset StreamOffset;
-    iextp::FirstMessageSequenceNumber FirstMessageSequenceNumber;
-    iextp::SendTime SendTime;
+    Version version;
+    Reserved reserved;
+    MessageProtocolId message_protocol_id;
+    ChannelId channel_id;
+    SessionId session_id;
+    PayloadLength payload_length;
+    MessageCount message_count;
+    StreamOffset stream_offset;
+    FirstMessageSequenceNumber first_message_sequence_number;
+    SendTime send_time;
 
     // parse method
     static IextpHeader* parse(std::byte* buffer) {

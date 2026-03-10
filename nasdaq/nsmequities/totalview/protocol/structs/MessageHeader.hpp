@@ -5,14 +5,12 @@
 
 namespace nasdaq::nsmequities::totalview::itch::v5_0 {
 
-namespace itch = nasdaq::nsmequities::totalview::itch::v5_0;
-
 #pragma pack(push, 1)
 
 struct MessageHeader {
 
-    itch::MessageLength MessageLength;
-    itch::MessageType MessageType;
+    MessageLength message_length;
+    MessageType message_type;
 
     // parse method
     static MessageHeader* parse(std::byte* buffer) {

@@ -8,17 +8,15 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct SnapshotFullRefreshOrderBookGroup {
 
-    sbe::OrderId OrderId;
-    sbe::MdOrderPriorityOptional MdOrderPriorityOptional;
-    sbe::MdEntryPxEx MdEntryPxEx;
-    sbe::MdDisplayQty MdDisplayQty;
-    sbe::MdEntryTypeBook MdEntryTypeBook;
+    OrderId order_id;
+    MdOrderPriorityOptional md_order_priority_optional;
+    MdEntryPxEx md_entry_px_ex;
+    MdDisplayQty md_display_qty;
+    MdEntryTypeBook md_entry_type_book;
 
     // parse method
     static SnapshotFullRefreshOrderBookGroup* parse(std::byte* buffer) {

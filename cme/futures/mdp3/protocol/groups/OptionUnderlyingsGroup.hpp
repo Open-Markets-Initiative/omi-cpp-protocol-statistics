@@ -5,14 +5,12 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct OptionUnderlyingsGroup {
 
-    sbe::UnderlyingSecurityId UnderlyingSecurityId;
-    sbe::UnderlyingSymbol UnderlyingSymbol;
+    UnderlyingSecurityId underlying_security_id;
+    UnderlyingSymbol underlying_symbol;
 
     // parse method
     static OptionUnderlyingsGroup* parse(std::byte* buffer) {

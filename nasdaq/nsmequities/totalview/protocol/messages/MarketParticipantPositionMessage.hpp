@@ -11,21 +11,19 @@
 
 namespace nasdaq::nsmequities::totalview::itch::v5_0 {
 
-namespace itch = nasdaq::nsmequities::totalview::itch::v5_0;
-
 #pragma pack(push, 1)
 
 // Nasdaq will send out this message only if Nasdaq Operations changes the status of a market participant firm in an issue
 struct MarketParticipantPositionMessage {
 
-    itch::StockLocate StockLocate;
-    itch::TrackingNumber TrackingNumber;
-    itch::Timestamp Timestamp;
-    itch::Mpid Mpid;
-    itch::Stock Stock;
-    itch::PrimaryMarketMaker PrimaryMarketMaker;
-    itch::MarketMakerMode MarketMakerMode;
-    itch::MarketParticipantState MarketParticipantState;
+    StockLocate stock_locate;
+    TrackingNumber tracking_number;
+    Timestamp timestamp;
+    Mpid mpid;
+    Stock stock;
+    PrimaryMarketMaker primary_market_maker;
+    MarketMakerMode market_maker_mode;
+    MarketParticipantState market_participant_state;
 
     // parse method
     static MarketParticipantPositionMessage* parse(std::byte* buffer) {

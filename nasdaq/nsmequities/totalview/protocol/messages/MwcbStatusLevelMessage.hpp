@@ -7,17 +7,15 @@
 
 namespace nasdaq::nsmequities::totalview::itch::v5_0 {
 
-namespace itch = nasdaq::nsmequities::totalview::itch::v5_0;
-
 #pragma pack(push, 1)
 
 // Informs data recipients when a MWCB has breached one of the established levels
 struct MwcbStatusLevelMessage {
 
-    itch::StockLocate StockLocate;
-    itch::TrackingNumber TrackingNumber;
-    itch::Timestamp Timestamp;
-    itch::BreachedLevel BreachedLevel;
+    StockLocate stock_locate;
+    TrackingNumber tracking_number;
+    Timestamp timestamp;
+    BreachedLevel breached_level;
 
     // parse method
     static MwcbStatusLevelMessage* parse(std::byte* buffer) {

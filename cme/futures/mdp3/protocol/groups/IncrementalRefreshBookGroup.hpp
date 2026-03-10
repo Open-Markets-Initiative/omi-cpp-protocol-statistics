@@ -13,22 +13,20 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct IncrementalRefreshBookGroup {
 
-    sbe::MdEntryPxOptionalEx MdEntryPxOptionalEx;
-    sbe::MdEntrySizeShortOptional MdEntrySizeShortOptional;
-    sbe::SecurityId SecurityId;
-    sbe::RptSeq RptSeq;
-    sbe::NumberOfOrdersOptional NumberOfOrdersOptional;
-    sbe::MdPriceLevel MdPriceLevel;
-    sbe::MdUpdateAction MdUpdateAction;
-    sbe::MdEntryTypeBook MdEntryTypeBook;
-    sbe::TradeableSize TradeableSize;
-    sbe::Padding1 Padding1;
+    MdEntryPxOptionalEx md_entry_px_optional_ex;
+    MdEntrySizeShortOptional md_entry_size_short_optional;
+    SecurityId security_id;
+    RptSeq rpt_seq;
+    NumberOfOrdersOptional number_of_orders_optional;
+    MdPriceLevel md_price_level;
+    MdUpdateAction md_update_action;
+    MdEntryTypeBook md_entry_type_book;
+    TradeableSize tradeable_size;
+    Padding1 padding_1;
 
     // parse method
     static IncrementalRefreshBookGroup* parse(std::byte* buffer) {

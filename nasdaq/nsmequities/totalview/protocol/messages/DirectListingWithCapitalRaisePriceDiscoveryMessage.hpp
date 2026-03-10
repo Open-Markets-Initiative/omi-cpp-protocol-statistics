@@ -14,24 +14,22 @@
 
 namespace nasdaq::nsmequities::totalview::itch::v5_0 {
 
-namespace itch = nasdaq::nsmequities::totalview::itch::v5_0;
-
 #pragma pack(push, 1)
 
 // This message is disseminated only for Direct Listing with Capital Raise (DLCR) securities
 struct DirectListingWithCapitalRaisePriceDiscoveryMessage {
 
-    itch::StockLocate StockLocate;
-    itch::TrackingNumber TrackingNumber;
-    itch::Timestamp Timestamp;
-    itch::Stock Stock;
-    itch::OpenEligibilityStatus OpenEligibilityStatus;
-    itch::MinimumAllowablePrice MinimumAllowablePrice;
-    itch::MaximumAllowablePrice MaximumAllowablePrice;
-    itch::NearExecutionPrice NearExecutionPrice;
-    itch::NearExecutionTime NearExecutionTime;
-    itch::LowerPriceRangeCollar LowerPriceRangeCollar;
-    itch::UpperPriceRangeCollar UpperPriceRangeCollar;
+    StockLocate stock_locate;
+    TrackingNumber tracking_number;
+    Timestamp timestamp;
+    Stock stock;
+    OpenEligibilityStatus open_eligibility_status;
+    MinimumAllowablePrice minimum_allowable_price;
+    MaximumAllowablePrice maximum_allowable_price;
+    NearExecutionPrice near_execution_price;
+    NearExecutionTime near_execution_time;
+    LowerPriceRangeCollar lower_price_range_collar;
+    UpperPriceRangeCollar upper_price_range_collar;
 
     // parse method
     static DirectListingWithCapitalRaisePriceDiscoveryMessage* parse(std::byte* buffer) {

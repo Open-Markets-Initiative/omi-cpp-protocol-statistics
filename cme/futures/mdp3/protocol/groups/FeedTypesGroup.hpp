@@ -5,14 +5,12 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct FeedTypesGroup {
 
-    sbe::MdFeedType MdFeedType;
-    sbe::MarketDepth MarketDepth;
+    MdFeedType md_feed_type;
+    MarketDepth market_depth;
 
     // parse method
     static FeedTypesGroup* parse(std::byte* buffer) {

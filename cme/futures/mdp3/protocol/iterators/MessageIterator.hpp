@@ -47,8 +47,8 @@ struct MessageIterator {
         const auto* header = Message::parse(current);
         message = current + sizeof(Message);
 
-        template_id = header->MessageHeader.TemplateId.get();
-        message_size = header->MessageSize.get();
+        template_id = header->message_header.template_id.get();
+        message_size = header->message_size.get();
 
         current += message_size;
 

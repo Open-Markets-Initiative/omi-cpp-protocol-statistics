@@ -7,16 +7,14 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct MaturityMonthYear {
 
-    sbe::Year Year;
-    sbe::Month Month;
-    sbe::Day Day;
-    sbe::Week Week;
+    Year year;
+    Month month;
+    Day day;
+    Week week;
 
     // parse method
     static MaturityMonthYear* parse(std::byte* buffer) {

@@ -40,7 +40,7 @@ struct MessageIterator {
         message_index = 0;
         message_type = 0;
         message_length = 0;
-        message_count = iextp_header->MessageCount.get();
+        message_count = iextp_header->message_count.get();
     }
 
     // next message
@@ -59,8 +59,8 @@ struct MessageIterator {
         message_header = MessageHeader::parse(current);
         message = current + sizeof(MessageHeader);
 
-        message_type = message_header->MessageType.get();
-        message_length = message_header->MessageLength.get();
+        message_type = message_header->message_type.get();
+        message_length = message_header->message_length.get();
 
         current += message_length + 2;
 

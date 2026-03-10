@@ -5,14 +5,12 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct EventsGroup {
 
-    sbe::EventType EventType;
-    sbe::EventTime EventTime;
+    EventType event_type;
+    EventTime event_time;
 
     // parse method
     static EventsGroup* parse(std::byte* buffer) {

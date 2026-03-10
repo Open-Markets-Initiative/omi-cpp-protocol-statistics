@@ -5,14 +5,12 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct OptionRelatedInstrumentsGroup {
 
-    sbe::RelatedSecurityId RelatedSecurityId;
-    sbe::RelatedSymbol RelatedSymbol;
+    RelatedSecurityId related_security_id;
+    RelatedSymbol related_symbol;
 
     // parse method
     static OptionRelatedInstrumentsGroup* parse(std::byte* buffer) {

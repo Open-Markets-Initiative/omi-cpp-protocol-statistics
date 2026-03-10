@@ -4,13 +4,11 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct ChannelResetGroup {
 
-    sbe::ApplId ApplId;
+    ApplId appl_id;
 
     // parse method
     static ChannelResetGroup* parse(std::byte* buffer) {

@@ -7,17 +7,15 @@
 
 namespace nasdaq::nsmequities::totalview::itch::v5_0 {
 
-namespace itch = nasdaq::nsmequities::totalview::itch::v5_0;
-
 #pragma pack(push, 1)
 
 // The Broken Trade Message is sent whenever an execution on Nasdaq is broken
 struct BrokenTradeMessage {
 
-    itch::StockLocate StockLocate;
-    itch::TrackingNumber TrackingNumber;
-    itch::Timestamp Timestamp;
-    itch::MatchNumber MatchNumber;
+    StockLocate stock_locate;
+    TrackingNumber tracking_number;
+    Timestamp timestamp;
+    MatchNumber match_number;
 
     // parse method
     static BrokenTradeMessage* parse(std::byte* buffer) {

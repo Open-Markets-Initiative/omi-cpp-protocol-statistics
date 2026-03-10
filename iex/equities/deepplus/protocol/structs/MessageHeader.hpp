@@ -5,14 +5,12 @@
 
 namespace iex::equities::deepplus::iextp::v1_0_1 {
 
-namespace iextp = iex::equities::deepplus::iextp::v1_0_1;
-
 #pragma pack(push, 1)
 
 struct MessageHeader {
 
-    iextp::MessageLength MessageLength;
-    iextp::MessageType MessageType;
+    MessageLength message_length;
+    MessageType message_type;
 
     // parse method
     static MessageHeader* parse(std::byte* buffer) {

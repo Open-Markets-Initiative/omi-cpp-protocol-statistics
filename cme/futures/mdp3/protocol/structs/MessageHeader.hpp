@@ -7,16 +7,14 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct MessageHeader {
 
-    sbe::BlockLength BlockLength;
-    sbe::TemplateId TemplateId;
-    sbe::SchemaId SchemaId;
-    sbe::Version Version;
+    BlockLength block_length;
+    TemplateId template_id;
+    SchemaId schema_id;
+    Version version;
 
     // parse method
     static MessageHeader* parse(std::byte* buffer) {

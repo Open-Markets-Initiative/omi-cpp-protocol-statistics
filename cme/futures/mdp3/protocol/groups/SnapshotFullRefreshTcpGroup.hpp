@@ -12,21 +12,19 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct SnapshotFullRefreshTcpGroup {
 
-    sbe::MdEntryPxOptionalEx MdEntryPxOptionalEx;
-    sbe::MdEntrySizeShortOptional MdEntrySizeShortOptional;
-    sbe::TradeableSize TradeableSize;
-    sbe::NumberOfOrdersOptional NumberOfOrdersOptional;
-    sbe::MdPriceLevelOptional MdPriceLevelOptional;
-    sbe::OpenCloseSettlFlag OpenCloseSettlFlag;
-    sbe::MdEntryType MdEntryType;
-    sbe::TradingReferenceDate TradingReferenceDate;
-    sbe::SettlPriceType SettlPriceType;
+    MdEntryPxOptionalEx md_entry_px_optional_ex;
+    MdEntrySizeShortOptional md_entry_size_short_optional;
+    TradeableSize tradeable_size;
+    NumberOfOrdersOptional number_of_orders_optional;
+    MdPriceLevelOptional md_price_level_optional;
+    OpenCloseSettlFlag open_close_settl_flag;
+    MdEntryType md_entry_type_;
+    TradingReferenceDate trading_reference_date;
+    SettlPriceType settl_price_type;
 
     // parse method
     static SnapshotFullRefreshTcpGroup* parse(std::byte* buffer) {

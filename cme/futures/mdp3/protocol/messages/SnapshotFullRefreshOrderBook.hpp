@@ -9,19 +9,17 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 // SnapshotFullRefreshOrderBook
 struct SnapshotFullRefreshOrderBook {
 
-    sbe::LastMsgSeqNumProcessed LastMsgSeqNumProcessed;
-    sbe::TotNumReports TotNumReports;
-    sbe::SecurityId SecurityId;
-    sbe::NoChunks NoChunks;
-    sbe::CurrentChunk CurrentChunk;
-    sbe::TransactTime TransactTime;
+    LastMsgSeqNumProcessed last_msg_seq_num_processed;
+    TotNumReports tot_num_reports;
+    SecurityId security_id;
+    NoChunks no_chunks;
+    CurrentChunk current_chunk;
+    TransactTime transact_time;
 
     // parse method
     static SnapshotFullRefreshOrderBook* parse(std::byte* buffer) {

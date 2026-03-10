@@ -15,25 +15,23 @@
 
 namespace nasdaq::nsmequities::totalview::itch::v5_0 {
 
-namespace itch = nasdaq::nsmequities::totalview::itch::v5_0;
-
 #pragma pack(push, 1)
 
 // NASDAQ disseminates NOII data
 struct NetOrderImbalanceIndicatorMessage {
 
-    itch::StockLocate StockLocate;
-    itch::TrackingNumber TrackingNumber;
-    itch::Timestamp Timestamp;
-    itch::PairedShares PairedShares;
-    itch::ImbalanceShares ImbalanceShares;
-    itch::ImbalanceDirection ImbalanceDirection;
-    itch::Stock Stock;
-    itch::FarPrice FarPrice;
-    itch::NearPrice NearPrice;
-    itch::CurrentReferencePrice CurrentReferencePrice;
-    itch::CrossType CrossType;
-    itch::PriceVariationIndicator PriceVariationIndicator;
+    StockLocate stock_locate;
+    TrackingNumber tracking_number;
+    Timestamp timestamp;
+    PairedShares paired_shares;
+    ImbalanceShares imbalance_shares;
+    ImbalanceDirection imbalance_direction;
+    Stock stock;
+    FarPrice far_price;
+    NearPrice near_price;
+    CurrentReferencePrice current_reference_price;
+    CrossType cross_type;
+    PriceVariationIndicator price_variation_indicator;
 
     // parse method
     static NetOrderImbalanceIndicatorMessage* parse(std::byte* buffer) {

@@ -5,15 +5,13 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 // ChannelReset
 struct ChannelReset {
 
-    sbe::TransactTime TransactTime;
-    sbe::MatchEventIndicator MatchEventIndicator;
+    TransactTime transact_time;
+    MatchEventIndicator match_event_indicator;
 
     // parse method
     static ChannelReset* parse(std::byte* buffer) {

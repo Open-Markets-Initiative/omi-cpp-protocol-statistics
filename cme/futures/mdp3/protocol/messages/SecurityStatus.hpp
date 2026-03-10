@@ -12,22 +12,20 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 // SecurityStatus
 struct SecurityStatus {
 
-    sbe::TransactTime TransactTime;
-    sbe::SecurityGroup SecurityGroup;
-    sbe::Asset Asset;
-    sbe::SecurityIdOptional SecurityIdOptional;
-    sbe::TradeDate TradeDate;
-    sbe::MatchEventIndicator MatchEventIndicator;
-    sbe::SecurityTradingStatus SecurityTradingStatus;
-    sbe::HaltReason HaltReason;
-    sbe::SecurityTradingEvent SecurityTradingEvent;
+    TransactTime transact_time;
+    SecurityGroup security_group;
+    Asset asset;
+    SecurityIdOptional security_id_optional;
+    TradeDate trade_date;
+    MatchEventIndicator match_event_indicator;
+    SecurityTradingStatus security_trading_status;
+    HaltReason halt_reason;
+    SecurityTradingEvent security_trading_event;
 
     // parse method
     static SecurityStatus* parse(std::byte* buffer) {

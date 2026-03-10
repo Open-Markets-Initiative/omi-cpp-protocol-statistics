@@ -8,17 +8,15 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct LegsGroup {
 
-    sbe::LegSecurityId LegSecurityId;
-    sbe::LegSide LegSide;
-    sbe::LegRatioQty LegRatioQty;
-    sbe::LegPrice LegPrice;
-    sbe::LegOptionDelta LegOptionDelta;
+    LegSecurityId leg_security_id;
+    LegSide leg_side;
+    LegRatioQty leg_ratio_qty;
+    LegPrice leg_price;
+    LegOptionDelta leg_option_delta;
 
     // parse method
     static LegsGroup* parse(std::byte* buffer) {

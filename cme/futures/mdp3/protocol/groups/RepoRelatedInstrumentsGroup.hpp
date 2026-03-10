@@ -6,15 +6,13 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct RepoRelatedInstrumentsGroup {
 
-    sbe::RelatedSecurityId RelatedSecurityId;
-    sbe::RelatedSymbol RelatedSymbol;
-    sbe::RelatedInstrumentGuid RelatedInstrumentGuid;
+    RelatedSecurityId related_security_id;
+    RelatedSymbol related_symbol;
+    RelatedInstrumentGuid related_instrument_guid;
 
     // parse method
     static RepoRelatedInstrumentsGroup* parse(std::byte* buffer) {

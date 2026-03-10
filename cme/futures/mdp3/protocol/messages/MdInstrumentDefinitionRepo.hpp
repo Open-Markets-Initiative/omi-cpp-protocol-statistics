@@ -47,57 +47,55 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 // MDInstrumentDefinitionRepo
 struct MdInstrumentDefinitionRepo {
 
-    sbe::MatchEventIndicator MatchEventIndicator;
-    sbe::TotNumReportsOptional TotNumReportsOptional;
-    sbe::SecurityUpdateAction SecurityUpdateAction;
-    sbe::LastUpdateTime LastUpdateTime;
-    sbe::MdSecurityTradingStatus MdSecurityTradingStatus;
-    sbe::ApplId ApplId;
-    sbe::MarketSegmentId MarketSegmentId;
-    sbe::UnderlyingProduct UnderlyingProduct;
-    sbe::SecurityExchange SecurityExchange;
-    sbe::SecurityGroup SecurityGroup;
-    sbe::Asset Asset;
-    sbe::Symbol Symbol;
-    sbe::SecurityId SecurityId;
-    sbe::SecurityType SecurityType;
-    sbe::CfiCode CfiCode;
-    sbe::Currency Currency;
-    sbe::SettlCurrency SettlCurrency;
-    sbe::MatchAlgorithm MatchAlgorithm;
-    sbe::MinTradeVol MinTradeVol;
-    sbe::MaxTradeVol MaxTradeVol;
-    sbe::MinPriceIncrement MinPriceIncrement;
-    sbe::DisplayFactor DisplayFactor;
-    sbe::UnitOfMeasure UnitOfMeasure;
-    sbe::UnitOfMeasureQty UnitOfMeasureQty;
-    sbe::TradingReferencePrice TradingReferencePrice;
-    sbe::TradingReferenceDate TradingReferenceDate;
-    sbe::HighLimitPrice HighLimitPrice;
-    sbe::LowLimitPrice LowLimitPrice;
-    sbe::MaxPriceVariation MaxPriceVariation;
-    sbe::FinancialInstrumentFullName FinancialInstrumentFullName;
-    sbe::PartyRoleClearingOrg PartyRoleClearingOrg;
-    sbe::StartDate StartDate;
-    sbe::EndDate EndDate;
-    sbe::TerminationType TerminationType;
-    sbe::RepoSubType RepoSubType;
-    sbe::MoneyOrPar MoneyOrPar;
-    sbe::MaxNoOfSubstitutions MaxNoOfSubstitutions;
-    sbe::PriceQuoteMethod PriceQuoteMethod;
-    sbe::UserDefinedInstrument UserDefinedInstrument;
-    sbe::RiskSet RiskSet;
-    sbe::MarketSet MarketSet;
-    sbe::InstrumentGuid InstrumentGuid;
-    sbe::TermCode TermCode;
-    sbe::BrokenDateTermType BrokenDateTermType;
+    MatchEventIndicator match_event_indicator;
+    TotNumReportsOptional tot_num_reports_optional;
+    SecurityUpdateAction security_update_action;
+    LastUpdateTime last_update_time;
+    MdSecurityTradingStatus md_security_trading_status;
+    ApplId appl_id;
+    MarketSegmentId market_segment_id;
+    UnderlyingProduct underlying_product;
+    SecurityExchange security_exchange;
+    SecurityGroup security_group;
+    Asset asset;
+    Symbol symbol;
+    SecurityId security_id;
+    SecurityType security_type;
+    CfiCode cfi_code;
+    Currency currency;
+    SettlCurrency settl_currency;
+    MatchAlgorithm match_algorithm;
+    MinTradeVol min_trade_vol;
+    MaxTradeVol max_trade_vol;
+    MinPriceIncrement min_price_increment;
+    DisplayFactor display_factor;
+    UnitOfMeasure unit_of_measure;
+    UnitOfMeasureQty unit_of_measure_qty;
+    TradingReferencePrice trading_reference_price;
+    TradingReferenceDate trading_reference_date;
+    HighLimitPrice high_limit_price;
+    LowLimitPrice low_limit_price;
+    MaxPriceVariation max_price_variation;
+    FinancialInstrumentFullName financial_instrument_full_name;
+    PartyRoleClearingOrg party_role_clearing_org;
+    StartDate start_date;
+    EndDate end_date;
+    TerminationType termination_type;
+    RepoSubType repo_sub_type;
+    MoneyOrPar money_or_par;
+    MaxNoOfSubstitutions max_no_of_substitutions;
+    PriceQuoteMethod price_quote_method;
+    UserDefinedInstrument user_defined_instrument;
+    RiskSet risk_set;
+    MarketSet market_set;
+    InstrumentGuid instrument_guid;
+    TermCode term_code;
+    BrokenDateTermType broken_date_term_type;
 
     // parse method
     static MdInstrumentDefinitionRepo* parse(std::byte* buffer) {

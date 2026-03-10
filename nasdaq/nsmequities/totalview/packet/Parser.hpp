@@ -1,10 +1,10 @@
 #pragma once
 
 #include "PcapFile.hpp"
-#include "ZipPcap.hpp"
+#include "decompressor/ZipPcap.hpp"
 #include "Frame.hpp"
-#include "Settings.hpp"
 #include "Result.hpp"
+#include "../statistics/Settings.hpp"
 #include "decompressor/Detect.hpp"
 
 namespace packet {

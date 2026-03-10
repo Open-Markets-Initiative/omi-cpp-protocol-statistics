@@ -4,14 +4,12 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 // AdminLogout
 struct AdminLogout {
 
-    sbe::Text Text;
+    Text text;
 
     // parse method
     static AdminLogout* parse(std::byte* buffer) {

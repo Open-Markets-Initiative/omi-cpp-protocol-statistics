@@ -15,24 +15,22 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct RepoUnderlyingsGroup {
 
-    sbe::UnderlyingSymbol UnderlyingSymbol;
-    sbe::UnderlyingSecurityIdOptional UnderlyingSecurityIdOptional;
-    sbe::UnderlyingSecurityAltId UnderlyingSecurityAltId;
-    sbe::UnderlyingSecurityAltIdSource UnderlyingSecurityAltIdSource;
-    sbe::UnderlyingFinancialInstrumentFullName UnderlyingFinancialInstrumentFullName;
-    sbe::UnderlyingSecurityType UnderlyingSecurityType;
-    sbe::UnderlyingCountryOfIssue UnderlyingCountryOfIssue;
-    sbe::UnderlyingIssuer UnderlyingIssuer;
-    sbe::UnderlyingMaxLifeTime UnderlyingMaxLifeTime;
-    sbe::UnderlyingMinDaysToMaturity UnderlyingMinDaysToMaturity;
-    sbe::UnderlyingInstrumentGuidOptional UnderlyingInstrumentGuidOptional;
-    sbe::UnderlyingMaturityDate UnderlyingMaturityDate;
+    UnderlyingSymbol underlying_symbol;
+    UnderlyingSecurityIdOptional underlying_security_id_optional;
+    UnderlyingSecurityAltId underlying_security_alt_id;
+    UnderlyingSecurityAltIdSource underlying_security_alt_id_source;
+    UnderlyingFinancialInstrumentFullName underlying_financial_instrument_full_name;
+    UnderlyingSecurityType underlying_security_type;
+    UnderlyingCountryOfIssue underlying_country_of_issue;
+    UnderlyingIssuer underlying_issuer;
+    UnderlyingMaxLifeTime underlying_max_life_time;
+    UnderlyingMinDaysToMaturity underlying_min_days_to_maturity;
+    UnderlyingInstrumentGuidOptional underlying_instrument_guid_optional;
+    UnderlyingMaturityDate underlying_maturity_date;
 
     // parse method
     static RepoUnderlyingsGroup* parse(std::byte* buffer) {

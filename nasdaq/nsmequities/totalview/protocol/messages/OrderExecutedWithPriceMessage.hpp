@@ -11,21 +11,19 @@
 
 namespace nasdaq::nsmequities::totalview::itch::v5_0 {
 
-namespace itch = nasdaq::nsmequities::totalview::itch::v5_0;
-
 #pragma pack(push, 1)
 
 // This message is sent whenever an order on the book is executed in whole or in part at a price different from the initial display price
 struct OrderExecutedWithPriceMessage {
 
-    itch::StockLocate StockLocate;
-    itch::TrackingNumber TrackingNumber;
-    itch::Timestamp Timestamp;
-    itch::OrderReferenceNumber OrderReferenceNumber;
-    itch::ExecutedShares ExecutedShares;
-    itch::MatchNumber MatchNumber;
-    itch::Printable Printable;
-    itch::ExecutionPrice ExecutionPrice;
+    StockLocate stock_locate;
+    TrackingNumber tracking_number;
+    Timestamp timestamp;
+    OrderReferenceNumber order_reference_number;
+    ExecutedShares executed_shares;
+    MatchNumber match_number;
+    Printable printable;
+    ExecutionPrice execution_price;
 
     // parse method
     static OrderExecutedWithPriceMessage* parse(std::byte* buffer) {

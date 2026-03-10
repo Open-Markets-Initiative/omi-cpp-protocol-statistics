@@ -9,19 +9,17 @@
 
 namespace iex::equities::deepplus::iextp::v1_0_1 {
 
-namespace iextp = iex::equities::deepplus::iextp::v1_0_1;
-
 #pragma pack(push, 1)
 
 // Trade Break Messages are sent when an execution on IEX is broken on that same trading day
 struct TradeBreakMessage {
 
-    iextp::SaleConditionFlags SaleConditionFlags;
-    iextp::Timestamp Timestamp;
-    iextp::Symbol Symbol;
-    iextp::Size Size;
-    iextp::Price Price;
-    iextp::TradeId TradeId;
+    SaleConditionFlags sale_condition_flags;
+    Timestamp timestamp;
+    Symbol symbol;
+    Size size;
+    Price price;
+    TradeId trade_id;
 
     // parse method
     static TradeBreakMessage* parse(std::byte* buffer) {

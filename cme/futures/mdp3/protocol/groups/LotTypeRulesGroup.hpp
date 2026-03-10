@@ -5,14 +5,12 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct LotTypeRulesGroup {
 
-    sbe::LotType LotType;
-    sbe::MinLotSizeDecimalQty MinLotSizeDecimalQty;
+    LotType lot_type;
+    MinLotSizeDecimalQty min_lot_size_decimal_qty;
 
     // parse method
     static LotTypeRulesGroup* parse(std::byte* buffer) {

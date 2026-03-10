@@ -6,16 +6,14 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 // MDIncrementalRefreshTradeSummaryLongQty
 struct MdIncrementalRefreshTradeSummaryLongQty {
 
-    sbe::TransactTime TransactTime;
-    sbe::MatchEventIndicator MatchEventIndicator;
-    sbe::Padding2 Padding2;
+    TransactTime transact_time;
+    MatchEventIndicator match_event_indicator;
+    Padding2 padding_2;
 
     // parse method
     static MdIncrementalRefreshTradeSummaryLongQty* parse(std::byte* buffer) {

@@ -5,14 +5,12 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct Message {
 
-    sbe::MessageSize MessageSize;
-    sbe::MessageHeader MessageHeader;
+    MessageSize message_size;
+    MessageHeader message_header;
 
     // parse method
     static Message* parse(std::byte* buffer) {

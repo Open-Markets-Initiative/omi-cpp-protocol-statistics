@@ -8,17 +8,15 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct IncrementalRefreshLimitsBandingGroup {
 
-    sbe::HighLimitPrice HighLimitPrice;
-    sbe::LowLimitPrice LowLimitPrice;
-    sbe::MaxPriceVariation MaxPriceVariation;
-    sbe::SecurityId SecurityId;
-    sbe::RptSeq RptSeq;
+    HighLimitPrice high_limit_price;
+    LowLimitPrice low_limit_price;
+    MaxPriceVariation max_price_variation;
+    SecurityId security_id;
+    RptSeq rpt_seq;
 
     // parse method
     static IncrementalRefreshLimitsBandingGroup* parse(std::byte* buffer) {

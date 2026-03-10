@@ -8,18 +8,16 @@
 
 namespace nasdaq::nsmequities::totalview::itch::v5_0 {
 
-namespace itch = nasdaq::nsmequities::totalview::itch::v5_0;
-
 #pragma pack(push, 1)
 
 // Nasaq processes orders based on the most Reg SHO Restriction status value
 struct RegShoShortSalePriceTestRestrictedIndicatorMessage {
 
-    itch::LocateCode LocateCode;
-    itch::TrackingNumber TrackingNumber;
-    itch::Timestamp Timestamp;
-    itch::Stock Stock;
-    itch::RegShoAction RegShoAction;
+    LocateCode locate_code;
+    TrackingNumber tracking_number;
+    Timestamp timestamp;
+    Stock stock;
+    RegShoAction reg_sho_action;
 
     // parse method
     static RegShoShortSalePriceTestRestrictedIndicatorMessage* parse(std::byte* buffer) {

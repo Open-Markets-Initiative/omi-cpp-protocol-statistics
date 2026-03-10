@@ -6,16 +6,14 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 // SnapshotRefreshTopOrders
 struct SnapshotRefreshTopOrders {
 
-    sbe::TransactTime TransactTime;
-    sbe::MatchEventIndicator MatchEventIndicator;
-    sbe::SecurityId SecurityId;
+    TransactTime transact_time;
+    MatchEventIndicator match_event_indicator;
+    SecurityId security_id;
 
     // parse method
     static SnapshotRefreshTopOrders* parse(std::byte* buffer) {

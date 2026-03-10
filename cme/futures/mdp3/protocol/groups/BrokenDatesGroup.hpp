@@ -7,16 +7,14 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct BrokenDatesGroup {
 
-    sbe::BrokenDateGuid BrokenDateGuid;
-    sbe::BrokenDateSecurityId BrokenDateSecurityId;
-    sbe::BrokenDateStart BrokenDateStart;
-    sbe::BrokenDateEnd BrokenDateEnd;
+    BrokenDateGuid broken_date_guid;
+    BrokenDateSecurityId broken_date_security_id;
+    BrokenDateStart broken_date_start;
+    BrokenDateEnd broken_date_end;
 
     // parse method
     static BrokenDatesGroup* parse(std::byte* buffer) {

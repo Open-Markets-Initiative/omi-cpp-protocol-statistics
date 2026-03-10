@@ -12,21 +12,19 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct IncrementalRefreshDailyStatisticsGroup {
 
-    sbe::MdEntryPxOptionalEx MdEntryPxOptionalEx;
-    sbe::MdEntrySizeShortOptional MdEntrySizeShortOptional;
-    sbe::SecurityId SecurityId;
-    sbe::RptSeq RptSeq;
-    sbe::TradingReferenceDate TradingReferenceDate;
-    sbe::SettlPriceType SettlPriceType;
-    sbe::MdUpdateAction MdUpdateAction;
-    sbe::MdEntryTypeDailyStatistics MdEntryTypeDailyStatistics;
-    sbe::Padding7 Padding7;
+    MdEntryPxOptionalEx md_entry_px_optional_ex;
+    MdEntrySizeShortOptional md_entry_size_short_optional;
+    SecurityId security_id;
+    RptSeq rpt_seq;
+    TradingReferenceDate trading_reference_date;
+    SettlPriceType settl_price_type;
+    MdUpdateAction md_update_action;
+    MdEntryTypeDailyStatistics md_entry_type_daily_statistics;
+    Padding7 padding_7;
 
     // parse method
     static IncrementalRefreshDailyStatisticsGroup* parse(std::byte* buffer) {

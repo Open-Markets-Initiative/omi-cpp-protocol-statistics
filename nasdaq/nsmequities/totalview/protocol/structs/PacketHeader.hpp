@@ -6,15 +6,13 @@
 
 namespace nasdaq::nsmequities::totalview::itch::v5_0 {
 
-namespace itch = nasdaq::nsmequities::totalview::itch::v5_0;
-
 #pragma pack(push, 1)
 
 struct PacketHeader {
 
-    itch::Session Session;
-    itch::SequenceNumber SequenceNumber;
-    itch::MessageCount MessageCount;
+    Session session;
+    SequenceNumber sequence_number;
+    MessageCount message_count;
 
     // parse method
     static PacketHeader* parse(std::byte* buffer) {

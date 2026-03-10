@@ -8,17 +8,15 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct IncrementalRefreshVolumeLongGroup {
 
-    sbe::MdEntrySize MdEntrySize;
-    sbe::SecurityId SecurityId;
-    sbe::RptSeq RptSeq;
-    sbe::MdUpdateAction MdUpdateAction;
-    sbe::Padding7 Padding7;
+    MdEntrySize md_entry_size;
+    SecurityId security_id;
+    RptSeq rpt_seq;
+    MdUpdateAction md_update_action;
+    Padding7 padding_7;
 
     // parse method
     static IncrementalRefreshVolumeLongGroup* parse(std::byte* buffer) {

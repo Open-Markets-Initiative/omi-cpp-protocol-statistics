@@ -8,18 +8,16 @@
 
 namespace nasdaq::nsmequities::totalview::itch::v5_0 {
 
-namespace itch = nasdaq::nsmequities::totalview::itch::v5_0;
-
 #pragma pack(push, 1)
 
 // This message is sent whenever an order on the book is modified as a result of a partial cancellation
 struct OrderCancelMessage {
 
-    itch::StockLocate StockLocate;
-    itch::TrackingNumber TrackingNumber;
-    itch::Timestamp Timestamp;
-    itch::OrderReferenceNumber OrderReferenceNumber;
-    itch::CanceledShares CanceledShares;
+    StockLocate stock_locate;
+    TrackingNumber tracking_number;
+    Timestamp timestamp;
+    OrderReferenceNumber order_reference_number;
+    CanceledShares canceled_shares;
 
     // parse method
     static OrderCancelMessage* parse(std::byte* buffer) {

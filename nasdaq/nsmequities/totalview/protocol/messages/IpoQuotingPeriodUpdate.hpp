@@ -10,20 +10,18 @@
 
 namespace nasdaq::nsmequities::totalview::itch::v5_0 {
 
-namespace itch = nasdaq::nsmequities::totalview::itch::v5_0;
-
 #pragma pack(push, 1)
 
 // Indicates the anticipated IPO quotation release time of a security.
 struct IpoQuotingPeriodUpdate {
 
-    itch::StockLocate StockLocate;
-    itch::TrackingNumber TrackingNumber;
-    itch::Timestamp Timestamp;
-    itch::Stock Stock;
-    itch::IpoQuotationReleaseTime IpoQuotationReleaseTime;
-    itch::IpoQuotationReleaseQualifier IpoQuotationReleaseQualifier;
-    itch::IpoPrice IpoPrice;
+    StockLocate stock_locate;
+    TrackingNumber tracking_number;
+    Timestamp timestamp;
+    Stock stock;
+    IpoQuotationReleaseTime ipo_quotation_release_time;
+    IpoQuotationReleaseQualifier ipo_quotation_release_qualifier;
+    IpoPrice ipo_price;
 
     // parse method
     static IpoQuotingPeriodUpdate* parse(std::byte* buffer) {

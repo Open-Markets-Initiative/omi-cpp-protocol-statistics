@@ -9,19 +9,17 @@
 
 namespace nasdaq::nsmequities::totalview::itch::v5_0 {
 
-namespace itch = nasdaq::nsmequities::totalview::itch::v5_0;
-
 #pragma pack(push, 1)
 
 // Informs data recipients what the daily MWCB breach points are set to for the current trading day.
 struct MwcbDeclineLevelMessage {
 
-    itch::StockLocate StockLocate;
-    itch::TrackingNumber TrackingNumber;
-    itch::Timestamp Timestamp;
-    itch::Level1 Level1;
-    itch::Level2 Level2;
-    itch::Level3 Level3;
+    StockLocate stock_locate;
+    TrackingNumber tracking_number;
+    Timestamp timestamp;
+    Level1 level_1;
+    Level2 level_2;
+    Level3 level_3;
 
     // parse method
     static MwcbDeclineLevelMessage* parse(std::byte* buffer) {

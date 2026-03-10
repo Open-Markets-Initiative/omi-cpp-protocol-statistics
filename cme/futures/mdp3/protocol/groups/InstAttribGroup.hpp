@@ -4,13 +4,11 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct InstAttribGroup {
 
-    sbe::InstAttribValue InstAttribValue;
+    InstAttribValue inst_attrib_value;
 
     // parse method
     static InstAttribGroup* parse(std::byte* buffer) {

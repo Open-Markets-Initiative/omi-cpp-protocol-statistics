@@ -20,30 +20,28 @@
 
 namespace nasdaq::nsmequities::totalview::itch::v5_0 {
 
-namespace itch = nasdaq::nsmequities::totalview::itch::v5_0;
-
 #pragma pack(push, 1)
 
 // Market data redistributors should process this message to populate the Financial Status Indicator (required display field) and the Market Category (recommended display field) for NASDAQ-listed issues.
 struct StockDirectoryMessage {
 
-    itch::StockLocate StockLocate;
-    itch::TrackingNumber TrackingNumber;
-    itch::Timestamp Timestamp;
-    itch::Stock Stock;
-    itch::MarketCategory MarketCategory;
-    itch::FinancialStatusIndicator FinancialStatusIndicator;
-    itch::RoundLotSize RoundLotSize;
-    itch::RoundLotsOnly RoundLotsOnly;
-    itch::IssueClassification IssueClassification;
-    itch::IssueSubType IssueSubType;
-    itch::Authenticity Authenticity;
-    itch::ShortSaleThresholdIndicator ShortSaleThresholdIndicator;
-    itch::IpoFlag IpoFlag;
-    itch::LuldReferencePriceTier LuldReferencePriceTier;
-    itch::EtpFlag EtpFlag;
-    itch::EtpLeverageFactor EtpLeverageFactor;
-    itch::InverseIndicator InverseIndicator;
+    StockLocate stock_locate;
+    TrackingNumber tracking_number;
+    Timestamp timestamp;
+    Stock stock;
+    MarketCategory market_category;
+    FinancialStatusIndicator financial_status_indicator;
+    RoundLotSize round_lot_size;
+    RoundLotsOnly round_lots_only;
+    IssueClassification issue_classification;
+    IssueSubType issue_sub_type;
+    Authenticity authenticity;
+    ShortSaleThresholdIndicator short_sale_threshold_indicator;
+    IpoFlag ipo_flag;
+    LuldReferencePriceTier luld_reference_price_tier;
+    EtpFlag etp_flag;
+    EtpLeverageFactor etp_leverage_factor;
+    InverseIndicator inverse_indicator;
 
     // parse method
     static StockDirectoryMessage* parse(std::byte* buffer) {

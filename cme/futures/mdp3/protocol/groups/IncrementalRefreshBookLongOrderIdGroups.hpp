@@ -9,18 +9,16 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct IncrementalRefreshBookLongOrderIdGroups {
 
-    sbe::OrderId OrderId;
-    sbe::MdOrderPriorityOptional MdOrderPriorityOptional;
-    sbe::MdDisplayQtyOptional MdDisplayQtyOptional;
-    sbe::ReferenceId ReferenceId;
-    sbe::OrderUpdateAction OrderUpdateAction;
-    sbe::Padding2 Padding2;
+    OrderId order_id;
+    MdOrderPriorityOptional md_order_priority_optional;
+    MdDisplayQtyOptional md_display_qty_optional;
+    ReferenceId reference_id;
+    OrderUpdateAction order_update_action;
+    Padding2 padding_2;
 
     // parse method
     static IncrementalRefreshBookLongOrderIdGroups* parse(std::byte* buffer) {

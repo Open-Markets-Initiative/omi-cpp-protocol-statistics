@@ -6,16 +6,14 @@
 
 namespace iex::equities::deepplus::iextp::v1_0_1 {
 
-namespace iextp = iex::equities::deepplus::iextp::v1_0_1;
-
 #pragma pack(push, 1)
 
 // This message is used to indicate that the IEX Book for a symbol has been cleared of all orders
 struct ClearBookMessage {
 
-    iextp::Reserved1 Reserved1;
-    iextp::Timestamp Timestamp;
-    iextp::Symbol Symbol;
+    Reserved1 reserved_1;
+    Timestamp timestamp;
+    Symbol symbol;
 
     // parse method
     static ClearBookMessage* parse(std::byte* buffer) {

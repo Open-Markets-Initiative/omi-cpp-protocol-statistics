@@ -12,21 +12,19 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct IncrementalRefreshTradeSummaryLongGroup {
 
-    sbe::MdEntryPxEx MdEntryPxEx;
-    sbe::MdEntrySize MdEntrySize;
-    sbe::SecurityId SecurityId;
-    sbe::RptSeq RptSeq;
-    sbe::NumberOfOrders NumberOfOrders;
-    sbe::MdTradeEntry MdTradeEntry;
-    sbe::AggressorSide AggressorSide;
-    sbe::MdUpdateAction MdUpdateAction;
-    sbe::Padding6 Padding6;
+    MdEntryPxEx md_entry_px_ex;
+    MdEntrySize md_entry_size;
+    SecurityId security_id;
+    RptSeq rpt_seq;
+    NumberOfOrders number_of_orders;
+    MdTradeEntry md_trade_entry;
+    AggressorSide aggressor_side;
+    MdUpdateAction md_update_action;
+    Padding6 padding_6;
 
     // parse method
     static IncrementalRefreshTradeSummaryLongGroup* parse(std::byte* buffer) {

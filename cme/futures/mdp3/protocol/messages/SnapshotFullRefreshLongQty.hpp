@@ -14,24 +14,22 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 // SnapshotFullRefreshLongQty
 struct SnapshotFullRefreshLongQty {
 
-    sbe::LastMsgSeqNumProcessed LastMsgSeqNumProcessed;
-    sbe::TotNumReports TotNumReports;
-    sbe::SecurityId SecurityId;
-    sbe::RptSeq RptSeq;
-    sbe::TransactTime TransactTime;
-    sbe::LastUpdateTime LastUpdateTime;
-    sbe::TradeDate TradeDate;
-    sbe::MdSecurityTradingStatus MdSecurityTradingStatus;
-    sbe::HighLimitPrice HighLimitPrice;
-    sbe::LowLimitPrice LowLimitPrice;
-    sbe::MaxPriceVariation MaxPriceVariation;
+    LastMsgSeqNumProcessed last_msg_seq_num_processed;
+    TotNumReports tot_num_reports;
+    SecurityId security_id;
+    RptSeq rpt_seq;
+    TransactTime transact_time;
+    LastUpdateTime last_update_time;
+    TradeDate trade_date;
+    MdSecurityTradingStatus md_security_trading_status;
+    HighLimitPrice high_limit_price;
+    LowLimitPrice low_limit_price;
+    MaxPriceVariation max_price_variation;
 
     // parse method
     static SnapshotFullRefreshLongQty* parse(std::byte* buffer) {

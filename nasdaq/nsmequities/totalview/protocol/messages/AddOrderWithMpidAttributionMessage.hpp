@@ -12,22 +12,20 @@
 
 namespace nasdaq::nsmequities::totalview::itch::v5_0 {
 
-namespace itch = nasdaq::nsmequities::totalview::itch::v5_0;
-
 #pragma pack(push, 1)
 
 // This message will be generated for attributed orders and quotations accepted by the Nasdaq system
 struct AddOrderWithMpidAttributionMessage {
 
-    itch::StockLocate StockLocate;
-    itch::TrackingNumber TrackingNumber;
-    itch::Timestamp Timestamp;
-    itch::OrderReferenceNumber OrderReferenceNumber;
-    itch::BuySellIndicator BuySellIndicator;
-    itch::Shares Shares;
-    itch::Stock Stock;
-    itch::Price Price;
-    itch::Attribution Attribution;
+    StockLocate stock_locate;
+    TrackingNumber tracking_number;
+    Timestamp timestamp;
+    OrderReferenceNumber order_reference_number;
+    BuySellIndicator buy_sell_indicator;
+    Shares shares;
+    Stock stock;
+    Price price;
+    Attribution attribution;
 
     // parse method
     static AddOrderWithMpidAttributionMessage* parse(std::byte* buffer) {

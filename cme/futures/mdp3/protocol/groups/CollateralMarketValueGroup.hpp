@@ -10,19 +10,17 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct CollateralMarketValueGroup {
 
-    sbe::UnderlyingSecurityAltId UnderlyingSecurityAltId;
-    sbe::UnderlyingSecurityAltIdSource UnderlyingSecurityAltIdSource;
-    sbe::CollateralMarketPrice CollateralMarketPrice;
-    sbe::DirtyPrice DirtyPrice;
-    sbe::UnderlyingInstrumentGuid UnderlyingInstrumentGuid;
-    sbe::MdStreamId MdStreamId;
-    sbe::Padding2 Padding2;
+    UnderlyingSecurityAltId underlying_security_alt_id;
+    UnderlyingSecurityAltIdSource underlying_security_alt_id_source;
+    CollateralMarketPrice collateral_market_price;
+    DirtyPrice dirty_price;
+    UnderlyingInstrumentGuid underlying_instrument_guid;
+    MdStreamId md_stream_id;
+    Padding2 padding_2;
 
     // parse method
     static CollateralMarketValueGroup* parse(std::byte* buffer) {

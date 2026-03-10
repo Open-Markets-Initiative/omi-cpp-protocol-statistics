@@ -7,17 +7,15 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 // QuoteRequest
 struct QuoteRequest {
 
-    sbe::TransactTime TransactTime;
-    sbe::QuoteReqId QuoteReqId;
-    sbe::MatchEventIndicator MatchEventIndicator;
-    sbe::Padding3 Padding3;
+    TransactTime transact_time;
+    QuoteReqId quote_req_id;
+    MatchEventIndicator match_event_indicator;
+    Padding3 padding_3;
 
     // parse method
     static QuoteRequest* parse(std::byte* buffer) {

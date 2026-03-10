@@ -9,19 +9,17 @@
 
 namespace nasdaq::nsmequities::totalview::itch::v5_0 {
 
-namespace itch = nasdaq::nsmequities::totalview::itch::v5_0;
-
 #pragma pack(push, 1)
 
 // This message is sent whenever an order on the book is executed in whole or in part
 struct OrderExecutedMessage {
 
-    itch::StockLocate StockLocate;
-    itch::TrackingNumber TrackingNumber;
-    itch::Timestamp Timestamp;
-    itch::OrderReferenceNumber OrderReferenceNumber;
-    itch::ExecutedShares ExecutedShares;
-    itch::MatchNumber MatchNumber;
+    StockLocate stock_locate;
+    TrackingNumber tracking_number;
+    Timestamp timestamp;
+    OrderReferenceNumber order_reference_number;
+    ExecutedShares executed_shares;
+    MatchNumber match_number;
 
     // parse method
     static OrderExecutedMessage* parse(std::byte* buffer) {

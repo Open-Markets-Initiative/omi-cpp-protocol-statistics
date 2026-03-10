@@ -11,21 +11,19 @@
 
 namespace nasdaq::nsmequities::totalview::itch::v5_0 {
 
-namespace itch = nasdaq::nsmequities::totalview::itch::v5_0;
-
 #pragma pack(push, 1)
 
 // Cross Trade message indicates that Nasdaq has completed its cross process for a specific security
 struct CrossTradeMessage {
 
-    itch::StockLocate StockLocate;
-    itch::TrackingNumber TrackingNumber;
-    itch::Timestamp Timestamp;
-    itch::CrossShares CrossShares;
-    itch::Stock Stock;
-    itch::CrossPrice CrossPrice;
-    itch::MatchNumber MatchNumber;
-    itch::CrossType CrossType;
+    StockLocate stock_locate;
+    TrackingNumber tracking_number;
+    Timestamp timestamp;
+    CrossShares cross_shares;
+    Stock stock;
+    CrossPrice cross_price;
+    MatchNumber match_number;
+    CrossType cross_type;
 
     // parse method
     static CrossTradeMessage* parse(std::byte* buffer) {

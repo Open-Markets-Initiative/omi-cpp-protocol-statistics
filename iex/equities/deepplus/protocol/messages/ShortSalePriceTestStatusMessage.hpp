@@ -7,17 +7,15 @@
 
 namespace iex::equities::deepplus::iextp::v1_0_1 {
 
-namespace iextp = iex::equities::deepplus::iextp::v1_0_1;
-
 #pragma pack(push, 1)
 
 // The Short Sale Price Test Message is used to indicate when a short sale price test restriction is in effect for a security.
 struct ShortSalePriceTestStatusMessage {
 
-    iextp::ShortSalePriceTestStatus ShortSalePriceTestStatus;
-    iextp::Timestamp Timestamp;
-    iextp::Symbol Symbol;
-    iextp::Detail Detail;
+    ShortSalePriceTestStatus short_sale_price_test_status;
+    Timestamp timestamp;
+    Symbol symbol;
+    Detail detail;
 
     // parse method
     static ShortSalePriceTestStatusMessage* parse(std::byte* buffer) {

@@ -9,18 +9,16 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct RelatedSymGroup {
 
-    sbe::Symbol Symbol;
-    sbe::SecurityId SecurityId;
-    sbe::OrderQty OrderQty;
-    sbe::QuoteType QuoteType;
-    sbe::SideOptional SideOptional;
-    sbe::Padding2 Padding2;
+    Symbol symbol;
+    SecurityId security_id;
+    OrderQty order_qty;
+    QuoteType quote_type;
+    SideOptional side_optional;
+    Padding2 padding_2;
 
     // parse method
     static RelatedSymGroup* parse(std::byte* buffer) {

@@ -6,15 +6,13 @@
 
 namespace cme::mdp3::v13 {
 
-namespace sbe = cme::mdp3::v13;
-
 #pragma pack(push, 1)
 
 struct IncrementalRefreshTradeSummaryLongOrderIdGroup {
 
-    sbe::OrderId OrderId;
-    sbe::LastQty LastQty;
-    sbe::Padding4 Padding4;
+    OrderId order_id;
+    LastQty last_qty;
+    Padding4 padding_4;
 
     // parse method
     static IncrementalRefreshTradeSummaryLongOrderIdGroup* parse(std::byte* buffer) {

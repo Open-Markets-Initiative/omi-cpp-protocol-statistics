@@ -10,20 +10,18 @@
 
 namespace nasdaq::nsmequities::totalview::itch::v5_0 {
 
-namespace itch = nasdaq::nsmequities::totalview::itch::v5_0;
-
 #pragma pack(push, 1)
 
 // This message is sent whenever an order on the book has been cancel-replaced
 struct OrderReplaceMessage {
 
-    itch::StockLocate StockLocate;
-    itch::TrackingNumber TrackingNumber;
-    itch::Timestamp Timestamp;
-    itch::OriginalOrderReferenceNumber OriginalOrderReferenceNumber;
-    itch::NewOrderReferenceNumber NewOrderReferenceNumber;
-    itch::Shares Shares;
-    itch::Price Price;
+    StockLocate stock_locate;
+    TrackingNumber tracking_number;
+    Timestamp timestamp;
+    OriginalOrderReferenceNumber original_order_reference_number;
+    NewOrderReferenceNumber new_order_reference_number;
+    Shares shares;
+    Price price;
 
     // parse method
     static OrderReplaceMessage* parse(std::byte* buffer) {

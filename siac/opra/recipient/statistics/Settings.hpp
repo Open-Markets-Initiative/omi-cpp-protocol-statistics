@@ -8,5 +8,12 @@ namespace packet {
 struct Options {
     std::string file;
 };
+}
 
+namespace statistics {
+
+// statistics options
+struct Options {
+    bool verbose = false;
+};
 }

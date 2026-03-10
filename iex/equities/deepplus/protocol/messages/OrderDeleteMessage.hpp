@@ -7,17 +7,15 @@
 
 namespace iex::equities::deepplus::iextp::v1_0_1 {
 
-namespace iextp = iex::equities::deepplus::iextp::v1_0_1;
-
 #pragma pack(push, 1)
 
 // A displayed order that was removed from the IEX Book
 struct OrderDeleteMessage {
 
-    iextp::Reserved1 Reserved1;
-    iextp::Timestamp Timestamp;
-    iextp::Symbol Symbol;
-    iextp::OrderIdReference OrderIdReference;
+    Reserved1 reserved_1;
+    Timestamp timestamp;
+    Symbol symbol;
+    OrderIdReference order_id_reference;
 
     // parse method
     static OrderDeleteMessage* parse(std::byte* buffer) {

@@ -10,12 +10,11 @@ struct IncrementalRefreshTradeSummaryLongOrderIdGroupIterator {
 
     const GroupSize8Byte* group_size_8_byte = nullptr;
 
-    std::uint16_t block_length = 0;
     std::uint8_t num_in_group = 0;
     std::uint8_t entry_index = 0;
     const std::byte* entry = nullptr;
 
-    // initialize group iterator
+    // initialize iterator
     void initialize(const std::byte* data) {
 
         current = data;
@@ -23,7 +22,6 @@ struct IncrementalRefreshTradeSummaryLongOrderIdGroupIterator {
         group_size_8_byte = GroupSize8Byte::parse(current);
         current += sizeof(GroupSize8Byte);
 
-        block_length = group_size_8_byte->BlockLength.get();
         num_in_group = group_size_8_byte->NumInGroup.get();
         entry_index = 0;
         entry = nullptr;
@@ -38,9 +36,13 @@ struct IncrementalRefreshTradeSummaryLongOrderIdGroupIterator {
 
         entry = current;
         entry_index++;
-        current += block_length;
 
         return true;
+    }
+
+    // advance past processed entry
+    void advance(std::size_t bytes) {
+        current += bytes;
     }
 
     // reset iterator
@@ -49,7 +51,6 @@ struct IncrementalRefreshTradeSummaryLongOrderIdGroupIterator {
 
         group_size_8_byte = nullptr;
 
-        block_length = 0;
         num_in_group = 0;
         entry_index = 0;
         entry = nullptr;

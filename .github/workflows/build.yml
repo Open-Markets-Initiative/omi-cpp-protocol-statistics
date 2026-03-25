@@ -15,7 +15,7 @@ jobs:
         run: sudo apt-get update
 
       - name: Install Dependencies
-        run: sudo apt-get install -y cmake g++ libgtest-dev
+        run: sudo apt-get install -y cmake g++ libgtest-dev zlib1g-dev libzstd-dev
 
       - name: Clone Omi Data
         run: git clone --depth=1 https://github.com/Open-Markets-Initiative/omi-data-packets.git

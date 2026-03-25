@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 23)
 add_executable(iex_equities_deepplus_iextp_v1_0_1_statistics main.cpp)
 
 # Shared pcap infrastructure headers at repo root
-target_include_directories(iex_equities_deepplus_iextp_v1_0_1_statistics PRIVATE ${CMAKE_SOURCE_DIR})
+target_include_directories(iex_equities_deepplus_iextp_v1_0_1_statistics PRIVATE ${CMAKE_SOURCE_DIR} ${CMAKE_SOURCE_DIR}/packet)
 
 find_package(ZLIB)
 if(ZLIB_FOUND)

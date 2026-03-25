@@ -22,7 +22,7 @@ struct SnapshotFullRefreshTcpGroup {
     NumberOfOrdersOptional number_of_orders_optional;
     MdPriceLevelOptional md_price_level_optional;
     OpenCloseSettlFlag open_close_settl_flag;
-    MdEntryType md_entry_type_;
+    MdEntryType md_entry_type;
     TradingReferenceDate trading_reference_date;
     SettlPriceType settl_price_type;
 

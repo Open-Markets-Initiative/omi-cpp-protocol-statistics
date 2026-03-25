@@ -18,7 +18,7 @@ struct SnapshotfullRefreshTcpLongGroup {
     NumberOfOrdersOptional number_of_orders_optional;
     MdPriceLevelUnsignedOptional md_price_level_unsigned_optional;
     OpenCloseSettlFlag open_close_settl_flag;
-    MdEntryType md_entry_type_;
+    MdEntryType md_entry_type;
 
     // parse method
     static SnapshotfullRefreshTcpLongGroup* parse(std::byte* buffer) {

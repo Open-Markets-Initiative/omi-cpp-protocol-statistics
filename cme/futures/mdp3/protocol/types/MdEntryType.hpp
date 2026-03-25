@@ -7,7 +7,7 @@ namespace cme::mdp3::v13 {
 // Market Data entry type
 struct MdEntryType {
 
-    static constexpr const char* name = "Md Entry Type ";
+    static constexpr const char* name = "Md Entry Type";
     static constexpr std::size_t size = 1;
 
     // default constructor

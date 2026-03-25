@@ -6,6 +6,9 @@ set(CMAKE_CXX_STANDARD 23)
 
 add_executable(cme_futures_mdp3_sbe_v1_13_statistics main.cpp)
 
+# Shared pcap infrastructure headers at repo root
+target_include_directories(cme_futures_mdp3_sbe_v1_13_statistics PRIVATE ${CMAKE_SOURCE_DIR})
+
 find_package(ZLIB)
 if(ZLIB_FOUND)
     target_compile_definitions(cme_futures_mdp3_sbe_v1_13_statistics PRIVATE HAS_ZLIB)

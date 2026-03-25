@@ -6,6 +6,9 @@ set(CMAKE_CXX_STANDARD 23)
 
 add_executable(nasdaq_nsmequities_totalview_itch_v5_0_statistics main.cpp)
 
+# Shared pcap infrastructure headers at repo root
+target_include_directories(nasdaq_nsmequities_totalview_itch_v5_0_statistics PRIVATE ${CMAKE_SOURCE_DIR})
+
 find_package(ZLIB)
 if(ZLIB_FOUND)
     target_compile_definitions(nasdaq_nsmequities_totalview_itch_v5_0_statistics PRIVATE HAS_ZLIB)

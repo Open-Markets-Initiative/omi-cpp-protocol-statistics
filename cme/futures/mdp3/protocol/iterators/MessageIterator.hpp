@@ -9,6 +9,8 @@ struct MessageIterator {
     const std::byte* current = nullptr;
     const std::byte* end = nullptr;
 
+    const BinaryPacketHeader* binary_packet_header = nullptr;
+
     std::uint16_t template_id = 0;
     std::uint16_t message_size = 0;
     const std::byte* message = nullptr;
@@ -21,11 +23,13 @@ struct MessageIterator {
         if (length < sizeof(BinaryPacketHeader)) {
             current = end;
             message = nullptr;
+            binary_packet_header = nullptr;
             template_id = 0;
             message_size = 0;
             return;
         }
 
+        binary_packet_header = BinaryPacketHeader::parse(data);
         current = data + sizeof(BinaryPacketHeader);
         message = nullptr;
 
@@ -60,6 +64,7 @@ struct MessageIterator {
         current = nullptr;
         end = nullptr;
 
+        binary_packet_header = nullptr;
         message = nullptr;
         template_id = 0;
         message_size = 0;

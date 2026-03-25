@@ -1,5 +1,7 @@
 # Omi C++ Protocol Statistics
 
+[![Build](https://github.com/Open-Markets-Initiative/omi-cpp-protocol-statistics/actions/workflows/build.yml/badge.svg)](https://github.com/Open-Markets-Initiative/omi-cpp-protocol-statistics/actions/workflows/build.yml)
+
 [![Omi](https://github.com/Open-Markets-Initiative/Directory/blob/main/About/Images/Logo.png)](https://github.com/Open-Markets-Initiative/Directory)
 
 Omi C++ protocol statistics provide generated pcap-based binary protocol validation tools for common exchange protocols.

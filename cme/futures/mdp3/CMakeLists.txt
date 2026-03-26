@@ -23,3 +23,5 @@ if(PkgConfig_FOUND)
         target_link_libraries(cme_futures_mdp3_sbe_v1_13_statistics PRIVATE PkgConfig::ZSTD)
     endif()
 endif()
+
+add_subdirectory(tests)

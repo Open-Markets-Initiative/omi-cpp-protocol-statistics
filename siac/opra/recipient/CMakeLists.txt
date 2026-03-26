@@ -23,3 +23,5 @@ if(PkgConfig_FOUND)
         target_link_libraries(siac_opra_recipient_obi_v6_1_statistics PRIVATE PkgConfig::ZSTD)
     endif()
 endif()
+
+add_subdirectory(tests)

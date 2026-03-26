@@ -23,3 +23,5 @@ if(PkgConfig_FOUND)
         target_link_libraries(nasdaq_nsmequities_totalview_itch_v5_0_statistics PRIVATE PkgConfig::ZSTD)
     endif()
 endif()
+
+add_subdirectory(tests)

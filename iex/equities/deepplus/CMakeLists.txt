@@ -23,3 +23,5 @@ if(PkgConfig_FOUND)
         target_link_libraries(iex_equities_deepplus_iextp_v1_0_1_statistics PRIVATE PkgConfig::ZSTD)
     endif()
 endif()
+
+add_subdirectory(tests)
